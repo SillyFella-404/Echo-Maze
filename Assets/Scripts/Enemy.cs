@@ -90,6 +90,9 @@ public class Enemy : MonoBehaviour
         return false;
     }
 
+    public void waitToRespawn(float time) {
+        spawnPoint.gameObject.GetComponent<EnemySpawn>().waitToRespawn(time);
+    }
 
 
 }

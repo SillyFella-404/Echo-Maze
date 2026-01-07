@@ -6,7 +6,8 @@ public class ResetType : EnemyType
 {
     void EnemyType.hurt(GameObject enemy)
     {
-        enemy.GetComponent<Enemy>().resetState();
+        enemy.GetComponent<Enemy>().waitToRespawn(2);
+        //enemy.GetComponent<Enemy>().resetState();
     }
 
 }

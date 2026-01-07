@@ -1,4 +1,5 @@
 using System;
+using System.CodeDom;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,6 +10,7 @@ public static class SaveState
     public static Boolean[] levelsUnlocked = new Boolean[10];
     public static EnemyType[] enemyTypes = { new DieType(), new ResetType() };
 
+    public static float enemyRespawnTime = 2;
 
 
     public static Boolean startedUnlocks = false;
