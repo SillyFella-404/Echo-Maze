@@ -19,6 +19,7 @@ public class Player : MonoBehaviour
         rb.angularVelocity = Vector3.zero;
         transform.position = spawnPoint.position;
         transform.rotation = spawnPoint.rotation;
+        isMoving = false;
         this.state = new NormalState();
     }
 
@@ -36,7 +37,7 @@ public class Player : MonoBehaviour
     }
 
     public float moveSpeed = 5f;             // units per second
-    public LayerMask obstacleLayers;         // assign walls in editor
+    public LayerMask obstacleLayers;
 
     private Rigidbody rb;
     private Vector3 targetPosition;
@@ -50,7 +51,7 @@ public class Player : MonoBehaviour
         rb.constraints = RigidbodyConstraints.FreezeRotation;
 
         SphereCollider sc = GetComponent<SphereCollider>();
-        sphereRadius = sc.radius * transform.localScale.x; // account for scaling
+        sphereRadius = sc.radius * transform.localScale.x; // didn't scale the player but who knows
 
         targetPosition = transform.position;
     }
@@ -99,7 +100,7 @@ public class Player : MonoBehaviour
             Vector3 moveDir = (targetPosition - transform.position).normalized;
             rb.velocity = moveDir * moveSpeed;
 
-            // Snap when close enough
+            // snap to grid
             if (Vector3.Distance(transform.position, targetPosition) < 0.01f)
             {
                 transform.position = targetPosition;

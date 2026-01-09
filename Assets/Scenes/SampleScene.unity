@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.003999705, g: 0.00021817535, b: 0.000000051843895, a: 1}
+  m_IndirectSpecularColor: {r: 0.0039997026, g: 0.00021817538, b: 0.000000051843895, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1724,7 +1724,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerSpawn: {fileID: 1011584719}
   UIManager: {fileID: 1358480686}
-  totalCoins: 45
+  totalCoins: 44
   coinsCollected: 0
   maxLives: 3
   currentLives: 3

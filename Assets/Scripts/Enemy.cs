@@ -24,7 +24,6 @@ public class Enemy : MonoBehaviour
     }
 
     public void hurt() {
-        UnityEngine.Debug.Log("Yaoi wowie that hurt");
         type.hurt(this.gameObject);
     }
 

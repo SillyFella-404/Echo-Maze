@@ -8,7 +8,7 @@ public class NormalState : PlayerState
     {
         //player.UI.GetComponent<UIManager>().
         player.SetActive(false);
-        enemy.GetComponent<EnemyMovement>().StopAndSnapToGrid();
+        player.GetComponent<Player>().PacManager.stopEnemies();
         player.GetComponent<Player>().PacManager.takeLife();
     }
 }

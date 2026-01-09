@@ -70,6 +70,12 @@ public class PacManager : MonoBehaviour
         }
     }
 
+    public void stopEnemies() {
+        for (int i = 0; i < enemies.Length; i++) {
+            enemies[i].gameObject.GetComponent<EnemyMovement>().StopAndSnapToGrid();
+        }
+    }
+
     public void placeOutlines() {
         this.gameObject.GetComponent<GridOutlineInstantiator>().GenerateOutlines(this.gameObject.GetComponent<GridLayerScanner>().ScanGrid());
     }
