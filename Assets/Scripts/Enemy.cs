@@ -15,6 +15,8 @@ public class Enemy : MonoBehaviour
     public Transform spawnPoint;
     public EnemyType type;
     public int typeID;
+    public Boolean fixedWander;
+    public Vector3[] waypoints;
 
     public void resetState()
     {
@@ -30,8 +32,13 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (fixedWander) {
+            state = new FixedWanderingState();
+            state.setWaypoints(waypoints);
+        }
         state = new WanderingState();
         type = SaveState.getEnemyType(typeID);
+
     }
 
     // Update is called once per frame

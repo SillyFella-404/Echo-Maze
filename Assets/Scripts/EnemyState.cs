@@ -6,4 +6,5 @@ public interface EnemyState
 {
     public void update(GameObject enemy) {}
     public void see(GameObject enemy, float attentionSpan) {}
+    public void setWaypoints(Vector3[] waypoints) { }
 }

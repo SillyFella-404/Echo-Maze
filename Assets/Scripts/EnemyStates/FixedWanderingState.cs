@@ -13,6 +13,10 @@ public class FixedWanderingState : EnemyState
     private Rigidbody rb;
     private bool moving = false;
 
+    void EnemyState.setWaypoints(Vector3[] waypoints) {
+        this.waypoints = waypoints;
+    }
+
     void EnemyState.update(GameObject enemy)
     {
         if (waypoints == null || waypoints.Length == 0)
